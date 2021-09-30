@@ -1,0 +1,544 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"saveupdateresorder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"pizza_quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"pizza_flavour": {
+						"type": "string"
+					},
+					"customerid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					},
+					"pizzaid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					}
+				},
+				"required": [
+					"_id",
+					"pizza_quantity",
+					"pizza_flavour",
+					"customerid",
+					"pizzaid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"getorder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"saveorder": {
+				"properties": {
+					"contact_no": {
+						"type": "number",
+						"format": "double"
+					},
+					"delivery_address": {
+						"type": "string"
+					},
+					"pizza_quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"customerid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					},
+					"pizzaid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					}
+				},
+				"required": [
+					"contact_no",
+					"delivery_address",
+					"pizza_quantity",
+					"customerid",
+					"pizzaid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"updateorder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"pizza_quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"customerid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					},
+					"pizzaid": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{}
+						]
+					}
+				},
+				"required": [
+					"_id",
+					"pizza_quantity",
+					"customerid",
+					"pizzaid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"delorder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"saverespizza": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"pizza_flavour": {
+						"type": "string"
+					},
+					"price_in_dollar": {
+						"type": "number",
+						"format": "double"
+					},
+					"price_in_euro": {
+						"type": "number",
+						"format": "double"
+					},
+					"delivery_cost": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"pizza_flavour",
+					"price_in_dollar",
+					"price_in_euro",
+					"delivery_cost"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"savereqpizza": {
+				"properties": {
+					"pizza_flavour": {
+						"type": "string"
+					},
+					"price_in_dollar": {
+						"type": "number",
+						"format": "double"
+					},
+					"price_in_euro": {
+						"type": "number",
+						"format": "double"
+					},
+					"delivery_cost": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"pizza_flavour",
+					"price_in_dollar",
+					"price_in_euro",
+					"delivery_cost"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"saverescust": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"customer_name": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"customer_name",
+					"password",
+					"address",
+					"cell"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"savereqcust": {
+				"properties": {
+					"customer_name": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"customer_name",
+					"password",
+					"address",
+					"cell"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginResponse": {
+				"properties": {
+					"TOKEN_KEY": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"TOKEN_KEY",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginRequest": {
+				"properties": {
+					"Customername": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Customername",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "token",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "pizzapp",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/order/getorder": {
+			"post": {
+				"operationId": "Getorder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saveupdateresorder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/getorder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/saveorder": {
+			"post": {
+				"operationId": "Saveorder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saveupdateresorder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/saveorder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/updateorder": {
+			"put": {
+				"operationId": "Updateorder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saveupdateresorder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/updateorder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/deleteorder": {
+			"delete": {
+				"operationId": "Deleteorder",
+				"responses": {
+					"200": {
+						"description": "order deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saveupdateresorder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/delorder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/menu/savemenu": {
+			"post": {
+				"operationId": "Savepizza",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saverespizza"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"menu"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/savereqpizza"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Cust/saveCustomer": {
+			"post": {
+				"operationId": "SaveCustomer",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/saverescust"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cust"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/savereqcust"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LoginResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"login"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginRequest"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
